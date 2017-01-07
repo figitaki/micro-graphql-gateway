@@ -1,0 +1,35 @@
+{
+  "name": "micro-graphql-gateway",
+  "version": "0.0.1",
+  "description": "GraphQL API Gateway for microservices",
+  "main": "index.js",
+  "repository": "https://github.com/figitaki/micro-graphql-gateway",
+  "author": "Carey Janecka <careyjanecka@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "micro -p 3000",
+    "test": "xo && ava",
+    "lint": "xo",
+    "dev": "nodemon"
+  },
+  "xo": {
+    "semicolon": false
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  },
+  "dependencies": {
+    "babel-register": "^6.18.0",
+    "graphql": "^0.8.2",
+    "micro": "^6.1.0"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "nodemon": "^1.11.0",
+    "request-promise": "^4.1.1",
+    "test-listen": "^1.0.0",
+    "xo": "^0.17.1"
+  }
+}
