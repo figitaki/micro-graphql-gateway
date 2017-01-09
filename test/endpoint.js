@@ -1,10 +1,13 @@
 const test = require('ava')
+const {send} = require('micro')
 const listen = require('test-listen')
 const request = require('request-promise')
-const endpoint = require('../index.js')
 
 test('my endpoint', async t => {
-	const url = await listen(endpoint)
+	const fn = async function (req, res) {
+		send(res, 200, {test: 'woot'})
+	}
+	const url = await listen(fn)
 	const body = await request(url)
 	t.is(body.test, 'woot')
 })
